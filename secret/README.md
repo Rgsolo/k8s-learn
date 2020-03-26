@@ -1,4 +1,16 @@
-# k8s
+# Projected Volume
+
+>在 Kubernetes 中，有几种特殊的 Volume，它们存在的意义不是为了存放容器里的数据，也不是用来进行容器和宿主机之间的数据交换。这些特殊 Volume 的作用，是为容器提供预先定义好的数据。所以，从容器的角度来看，这些 Volume 里的信息就是仿佛是被 Kubernetes“投射”（Project）进入容器当中的。这正是 Projected Volume 的含义。
+
+Projected Volume的四种类型
+
+- secret：密码相关的信息挂载到etcd中，由k8s实时更新，但是会有延迟，内容必须经过base64转码，不可以存明文。有两种创建方式，一种是手动指定创建，一种是yaml文件的方式创建。手动指定的文件可以存明文，yaml中不可以存明文。
+
+- configmap：跟secret相似，但是不需要加密
+
+- Downward API：可以获取pod的元数据信息，比如宿主机ip
+
+- ServiceAccountToken：不是很懂。后面讲k8s插件的时候会用到，后面再深入学习。
 
 ###### 生成模版yaml文件
 
