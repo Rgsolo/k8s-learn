@@ -10,7 +10,7 @@ statefulset的设计分为两种：拓扑状态和存储状态
 
 > 这种情况意味着，应用的多个实例分别绑定了不同的存储数据。对于这些应用实例来说，Pod A 第一次读取到的数据，和隔了十分钟之后再次读取到的数据，应该是同一份，哪怕在此期间 Pod A 被重新创建过。这种情况最典型的例子，就是一个数据库应用的多个存储实例。
 
-##### statefulset—拓扑状态
+### statefulset—拓扑状态
 
 - headless service
 
@@ -120,5 +120,13 @@ Address 1: 10.0.0.10 kube-dns.kube-system.svc.cluster.local
 
 Name:      web-1.nginx
 Address 1: 10.244.2.7
+```
+
+### statefulset—拓扑状态
+
+创建pv
+
+```
+
 ```
 
